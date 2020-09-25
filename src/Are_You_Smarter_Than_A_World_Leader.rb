@@ -1,4 +1,6 @@
-divider =                       "################################################################################################################"
+require 'tty-progressbar'
+
+divider = "################################################################################################################"
 
 class Character
     def initialize
@@ -14,6 +16,7 @@ class Game
     @score = []
     @divider = "################################################################################################################"
     @countries = ["China", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
+    @questions = []
     @country = @countries.sample
     end
 
@@ -36,8 +39,13 @@ class Game
         puts @divider
         puts dialogue
         puts @divider
-        puts "Press Enter If You Are Ready!" 
+        puts "Press Enter To load Your Mission" 
         continue
+        bar = TTY::ProgressBar.new("loading [:bar]", total: 100)
+        100.times do
+        sleep(0.02)
+        bar.advance(1)
+end
 
 
 
@@ -49,6 +57,9 @@ end
 
 class Vladmir_Putin
     def initialize
+      @ethical_answers = []
+      @balanced_answers = []
+      @financial_answers = []
 
     end
 
@@ -60,7 +71,9 @@ end
 
 class Donald_Trump
     def initialize
-
+      @ethical_answers = []
+      @balanced_answers = []
+      @financial_answers = []
     end
 
   def message
@@ -71,7 +84,9 @@ end
 
 class Boris_Johnson
     def initialize
-
+      @ethical_answers = []
+      @balanced_answers = []
+      @financial_answers = []
     end
 
   def message
@@ -89,9 +104,9 @@ puts "\n"
 puts "A pandemic has broken out!!"
 puts "\n"
 puts "Select your character below:"
-puts "1. For #{characters[0]}"
-puts "2. for #{characters[1]}"
-puts "3. for #{characters[2]}"
+puts "1 For #{characters[0]}"
+puts "2 for #{characters[1]}"
+puts "3 for #{characters[2]}"
 
 selection = gets.to_i
 
@@ -106,11 +121,19 @@ end
 
 #/////////RUN///////////////////////////////////////////////////////////////////////////////////////////////
 
-puts divider
-puts selection.message
-game_one = Game.new
-puts game_one.run
-puts 
+  puts divider
+  puts selection.message
+  game_one = Game.new
+  puts game_one.run
+  puts selection
+
+
+
+
+
+
+# choices = %w(vodka beer wine whisky bourbon)
+# prompt.multi_select("Select drinks?", choices)
 
 
 
