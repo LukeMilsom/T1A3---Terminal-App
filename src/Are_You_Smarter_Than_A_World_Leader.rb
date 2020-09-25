@@ -1,42 +1,51 @@
-# class  Are_You_Smarter_Than_A_World_Leader 
-#     def  initialize(selection)
-#         @score = []
-#         @start
-#         @end
-#         @answer = ""
-#         @question = ""
-#         @selection = selection
-#     end
-#     def intro()
-#         "A pandemic has broken out\n"
-#     end
-#     def character_select()
-#        "Select from the characters below:"
-#        "You have selected #{@selection}"
-#     end 
+divider =                       "################################################################################################################"
 
-#     def run 
-#      puts intro
-#      puts character_select
-#     end
-# end
+class Character
+    def initialize
 
-# game_one  = Are_You_Smarter_Than_A_World_Leader.new
-# puts game_one("harry").run
+    end
+
+end
+
+class Game
+     
+    def initialize
+    
+    @score = []
+    @divider = "################################################################################################################"
+    @countries = ["China", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
+    @country = @countries.sample
+    end
+
+    def dialogue 
+        puts "The year is 2019 - an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
+        it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!"
+    end
+    def continue 
+  
+        while true
+        press_enter = gets.chomp
+        if press_enter.empty?
+            break
+        else 
+            puts "Invalid Option! Press Enter!"
+        end
+        end
+    end
+    def run
+        puts @divider
+        puts dialogue
+        puts @divider
+        puts "Press Enter If You Are Ready!" 
+        continue
 
 
 
+    end
 
+end
 
-
-# class Character
-#     def initialize
-#     @question = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
-
-#     end
-# end
-
-
+#/////Characters////////////////////////////////////////////////////////////////////////////////////////////
 
 class Vladmir_Putin
     def initialize
@@ -44,14 +53,37 @@ class Vladmir_Putin
     end
 
   def message
-    puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, 
-    glory to the motherland"
+    puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
   end
   
 end
 
-    vlad = Vladmir_Putin.new
+class Donald_Trump
+    def initialize
 
+    end
+
+  def message
+    puts "You have selected the one the only Donald Trump to battle this deadly virus, god bless America!"
+  end
+  
+end
+
+class Boris_Johnson
+    def initialize
+
+    end
+
+  def message
+    puts "Rigtho Chap, Boris Johnson here looks like Brexit came early!"
+  end
+  
+end
+    donald = Donald_Trump.new
+    vlad = Vladmir_Putin.new
+    boris = Boris_Johnson.new
+
+#////////////////////////////////////////////////////////////////////////////////////////////////////////////
 characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
 puts "\n"
 puts "A pandemic has broken out!!"
@@ -64,22 +96,26 @@ puts "3. for #{characters[2]}"
 selection = gets.to_i
 
 if selection == 1
-    selection = Donald_Trump
+    selection = donald
 elsif selection == 2
     selection = vlad
 else 
-    selection = characters[2]
+    selection = boris
 end 
 
 
+#/////////RUN///////////////////////////////////////////////////////////////////////////////////////////////
+
+puts divider
 puts selection.message
+game_one = Game.new
+puts game_one.run
+puts 
 
 
 
-# def Donald_Trump 
-#     puts "You have selected the one the only Donald Trump to battle this deadly virus, god bless America!"
-#     end
-    
+
+
 
 
 
