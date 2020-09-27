@@ -4,7 +4,6 @@ require 'pastel'
 require "tty-prompt"
 
 
-divider = "################################################################################################################"
 
 
 class Game
@@ -60,11 +59,13 @@ class Vladmir_Putin
           @score = []
           @questions = ["Evening comrade, the virus is spreading at a rate of knotts, we need to take imediate action!", 
         "What would you like to do?", ""]
+          @play_again = ['Play again?', 'Yes', 'No']
           @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
           @balanced_answers = ['Consult the KGB', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
           @financial_answers = ['Leave The Borders Open', 'Play down the situation to keep a healthy economy', 'listen to the doctors advice']
           @easter_egg = ['Travel to St Petersburg to address the citizens', 'Finish your vodka and ignore the gopniks']
-
+          @fail = ['civil war', 'starvation', 'bankruptcy', 'collapse']
+          @failure = @fail.sample
         end
     # ------WELCOME MESSAGE--------------------------------
       def message
@@ -291,21 +292,59 @@ class Vladmir_Putin
 
         def gulag
           puts `clear`
-          puts '
-    ███        ▄█    █▄       ▄████████         ▄██████▄  ███    █▄   ▄█          ▄████████    ▄██████▄  
-▀█████████▄   ███    ███     ███    ███        ███    ███ ███    ███ ███         ███    ███   ███    ███ 
-   ▀███▀▀██   ███    ███     ███    █▀         ███    █▀  ███    ███ ███         ███    ███   ███    █▀  
-    ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄           ▄███        ███    ███ ███         ███    ███  ▄███        
-    ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀          ▀▀███ ████▄  ███    ███ ███       ▀███████████ ▀▀███ ████▄  
-    ███       ███    ███     ███    █▄         ███    ███ ███    ███ ███         ███    ███   ███    ███ 
-    ███       ███    ███     ███    ███        ███    ███ ███    ███ ███▌    ▄   ███    ███   ███    ███ 
-   ▄████▀     ███    █▀      ██████████        ████████▀  ████████▀  █████▄▄██   ███    █▀    ████████▀  
-                                                                     ▀                                   
-'
-          puts 'Welcome to the Gulag, 
-          a fight for survival where winning your Gunfight will grant you a second chance…
+          anim_two( '
+                ███        ▄█    █▄       ▄████████         ▄██████▄  ███    █▄   ▄█          ▄████████    ▄██████▄  
+            ▀█████████▄   ███    ███     ███    ███        ███    ███ ███    ███ ███         ███    ███   ███    ███ 
+              ▀███▀▀██   ███    ███     ███    █▀         ███    █▀  ███    ███ ███         ███    ███   ███    █▀  
+                ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄           ▄███        ███    ███ ███         ███    ███  ▄███        
+                ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀          ▀▀███ ████▄  ███    ███ ███       ▀███████████ ▀▀███ ████▄  
+                ███       ███    ███     ███    █▄         ███    ███ ███    ███ ███         ███    ███   ███    ███ 
+                ███       ███    ███     ███    ███        ███    ███ ███    ███ ███▌    ▄   ███    ███   ███    ███ 
+              ▄████▀     ███    █▀      ██████████        ████████▀  ████████▀  █████▄▄██   ███    █▀    ████████▀  
+                                                                                ▀                                   
+            ')
+          puts 
+          'Welcome to the Gulag, a fight for survival where winning your Gunfight will grant you a second chance…
           while losing your Gunfight results in possible elimination.'
         end
+
+        def final_straw
+          puts `clear`
+          anim_two('
+          ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+         ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+         ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌          ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ 
+         ▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          
+         ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ 
+         ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+         ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀ 
+         ▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌          
+         ▐░▌          ▐░▌       ▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ 
+         ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌
+          ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+                                                                                                    
+         ')
+         puts "You have sincerely let your people down, your country is on the brink of #{@failure}"
+
+          def play(q1, a1, a2)
+            
+            puts q1
+            
+            q1 = [a1, a2]
+            `clear`
+            result_q1 = @prompt.collect do
+              key(:answer).select("", q1)
+            end
+
+            puts `clear`
+
+            answer = result_q1.values.join
+          end
+        @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
+
+        end
+
+          
 
           # ---Putin Execution Logic -----
           if @q1 == "Consult the KGB"
@@ -325,7 +364,14 @@ class Vladmir_Putin
         else 
         puts final_straw
         end
-
+      #---REPLAY-----
+      if @wanna_play_again == 'Yes'
+        puts start_up
+      else 
+      puts 'henlo'
+      end
+      
+        
 
      
   end
@@ -365,45 +411,51 @@ class Boris_Johnson
   
 
 #////////////////////////////////////////////////////////////////////////////////////////////////////////////
-donald = Donald_Trump.new
-vlad = Vladmir_Putin.new
-boris = Boris_Johnson.new
-
-characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
-puts "\n"
-puts "A pandemic has broken out!!"
-puts "\n"
-puts "Select your character below:"
-puts "1 For #{characters[0]}"
-puts "2 for #{characters[1]}"
-puts "3 for #{characters[2]}"
 
 
-while true
-    selection = gets.to_i
-  if selection == 1
-      selection = donald
-      break
-  elsif selection == 2
-      selection = vlad
-      break
-  elsif
-      selection == 3
-      selection = boris
-      break
-  else 
-    puts "Incorrect input, please enter a number from 1-3"
-  end 
-end
+def start_up
+
+    donald = Donald_Trump.new
+    vlad = Vladmir_Putin.new
+    boris = Boris_Johnson.new
+
+  characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
+  puts "\n"
+  puts "A pandemic has broken out!!"
+  puts "\n"
+  puts "Select your character below:"
+  puts "1 For #{characters[0]}"
+  puts "2 for #{characters[1]}"
+  puts "3 for #{characters[2]}"
 
 
-  puts divider
+  while true
+      selection = gets.to_i
+    if selection == 1
+        selection = donald
+        break
+    elsif selection == 2
+        selection = vlad
+        break
+    elsif
+        selection == 3
+        selection = boris
+        break
+    else 
+      puts "Incorrect input, please enter a number from 1-3"
+    end 
+  end
+
+  puts @divider
   puts selection.message
   game_one = Game.new
   puts game_one.engine
   puts `clear`
   puts selection.run_game
 
+end
+
+puts start_up
 
 
 
