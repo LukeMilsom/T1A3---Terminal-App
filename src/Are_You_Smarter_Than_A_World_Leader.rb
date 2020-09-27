@@ -1,7 +1,10 @@
-require 'tty-progressbar'
+# require 'tty-progressbar'
 require 'tty-spinner'
 require 'pastel'
 require "tty-prompt"
+require 'colorize'
+require 'colorized_string'
+require "tty-box"
 
 
 
@@ -17,10 +20,33 @@ class Game
     @country = @countries.sample
     end
     def dialogue 
+      puts `clear`
+      puts "
       
-        @intro = "The year is 2019 - an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
-        it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!"
-    
+      
+      
+      
+                                      
+                                                             ████████╗██╗  ██╗███████╗    ██╗   ██╗███████╗ █████╗ ██████╗     ██╗███████╗    ██████╗  ██████╗  ██╗ █████╗ 
+                                                              ╚═██╔══╝██║  ██║██╔════╝    ╚██╗ ██╔╝██╔════╝██╔══██╗██╔══██╗    ██║██╔════╝    ╚════██╗██╔═████╗███║██╔══██╗
+                                                                ██║   ███████║█████╗       ╚████╔╝ █████╗  ███████║██████╔╝    ██║███████╗     █████╔╝██║██╔██║╚██║╚██████║
+                                                                ██║   ██╔══██║██╔══╝        ╚██╔╝  ██╔══╝  ██╔══██║██╔══██╗    ██║╚════██║    ██╔═══╝ ████╔╝██║ ██║ ╚═══██║
+                                                                ██║   ██║  ██║███████╗       ██║   ███████╗██║  ██║██║  ██║    ██║███████║    ███████╗╚██████╔╝ ██║ █████╔╝
+                                                                ╚═╝   ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚══════╝    ╚══════╝ ╚═════╝  ╚═╝ ╚════╝ 
+            
+                                                                
+
+
+
+
+
+
+
+
+                                                                
+      "    
+    box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
+    it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!")
       end
     def continue 
         while true
@@ -33,16 +59,27 @@ class Game
         end
     end
     def engine
-        puts @divider
+        
         puts dialogue
-        puts @divider
-        puts "Press Enter To load Your Mission" 
+        puts "
+        
+
+        
+
+
+
+
+
+
+        
+                                                                                                ╔═╗╦═╗╔═╗╔═╗╔═╗  ╔═╗╔╗╔╔╦╗╔═╗╦═╗
+                                                                                                ╠═╝╠╦╝║╣ ╚═╗╚═╗  ║╣ ║║║ ║ ║╣ ╠╦╝ o
+                                                                                                ╩  ╩╚═╚═╝╚═╝╚═╝  ╚═╝╝╚╝ ╩ ╚═╝╩╚═ o
+                                                                                                        
+                                        
+        " 
         continue
-        bar = TTY::ProgressBar.new("loading [:bar]", total: 100)
-        100.times do
-        sleep(0.02)
-        bar.advance(1)
-        end
+    
 
 
 
@@ -63,7 +100,7 @@ class Vladmir_Putin
           @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
           @balanced_answers = ['Consult the KGB', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
           @financial_answers = ['Leave The Borders Open', 'Play down the situation to keep a healthy economy', 'listen to the doctors advice']
-          @easter_egg = ['Travel to St Petersburg to address the citizens', 'Finish your vodka and ignore the gopniks']
+          @easter_egg = ['Travel to St Petersburg to address the citizens', 'Finish your vodka and ignore the gopniks', 'Fire the gun']
           @fail = ['civil war', 'starvation', 'bankruptcy', 'collapse']
           @failure = @fail.sample
         end
@@ -75,28 +112,36 @@ class Vladmir_Putin
   def run_game
           @prompt = TTY::Prompt.new
           print "
-                        ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    
-                        ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    
-                        ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗      
-                        ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝      
-                        ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗    
-                        ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    
+                                                                            ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    
+                                                                            ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    
+                                                                            ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗      
+                                                                            ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝      
+                                                                            ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗    
+                                                                            ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝  ", 
+                                                                                                                                              
+                                                                        "
+
+                                                                                                  ████████╗ ██████╗                                                 
+                                                                                                  ══██╔══╝██╔═══██╗                                                
+                                                                                                    ██║   ██║   ██║                                                
+                                                                                                    ██║   ██║   ██║                                                
+                                                                                                    ██║   ╚██████╔╝                                                
+                                                                                                    ╚═╝    ╚═════╝ 
+                                                                                                    
+                                                                                                    ".colorize(:blue),                                              
+                                                                                                                                              
+                                                                          "
+                                                                          
+                                                                            ███╗   ███╗ ██████╗ ███████╗ ██████╗ ██████╗ ██╗    ██╗           
+                                                                            ████╗ ████║██╔═══██╗██╔════╝██╔════╝██╔═══██╗██║    ██║           
+                                                                            ██╔████╔██║██║   ██║███████╗██║     ██║   ██║██║ █╗ ██║           
+                                                                            ██║╚██╔╝██║██║   ██║╚════██║██║     ██║   ██║██║███╗██║           
+                                                                            ██║ ╚═╝ ██║╚██████╔╝███████║╚██████╗╚██████╔╝╚███╔███╔╝           
+                                                                            ╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝  ╚══╝╚══╝  
+                                                                            
+                                                                            ".colorize(:red)          
                                                                                           
-                      ████████╗ ██████╗                                                 
-                        ══██╔══╝██╔═══██╗                                                
-                          ██║   ██║   ██║                                                
-                          ██║   ██║   ██║                                                
-                          ██║   ╚██████╔╝                                                
-                          ╚═╝    ╚═════╝                                                 
-                                                                                          
-                        ███╗   ███╗ ██████╗ ███████╗ ██████╗ ██████╗ ██╗    ██╗           
-                        ████╗ ████║██╔═══██╗██╔════╝██╔════╝██╔═══██╗██║    ██║           
-                        ██╔████╔██║██║   ██║███████╗██║     ██║   ██║██║ █╗ ██║           
-                        ██║╚██╔╝██║██║   ██║╚════██║██║     ██║   ██║██║███╗██║           
-                        ██║ ╚═╝ ██║╚██████╔╝███████║╚██████╗╚██████╔╝╚███╔███╔╝           
-                        ╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝  ╚══╝╚══╝            
-                                                                                          
-          "
+          
         # ------LOADING SPINNER-----------------------
         def spinner
           spinner = TTY::Spinner.new("Loading :spinner ... ", format: :spin_2)
@@ -120,6 +165,7 @@ class Vladmir_Putin
               time = rand(0.5..1.5)
               sleep(time)
           end
+
       # -------FAST TYPEWRITER ANIMATION-----------------
           def anim_two(string)
             string.each_char do |n|
@@ -134,6 +180,9 @@ class Vladmir_Putin
               time = rand(0.00..0.01)
               sleep(time)
           end
+
+      #------------------------------------------------------
+
 
       #--------------------------------------------
       # ----QUESTION ENGINE----------Q1!!!----------------
@@ -156,24 +205,27 @@ class Vladmir_Putin
         def kgb 
             
           anim_two("     
-                                      ▄█   ▄█▄    ▄██████▄  ▀█████████▄  
-                                      ███ ▄███▀   ███    ███   ███    ███ 
-                                      ███▐██▀     ███    █▀    ███    ███ 
-                                    ▄█████▀     ▄███         ▄███▄▄▄██▀  
-                                    ▀▀█████▄    ▀▀███ ████▄  ▀▀███▀▀▀██▄  
-                                      ███▐██▄     ███    ███   ███    ██▄ 
-                                      ███ ▀███▄   ███    ███   ███    ███ 
-                                      ███   ▀█▀   ████████▀  ▄█████████▀  
-                                      ▀                                   
-                                      
-                                      ┬ ┬┌─┐┌─┐┌┬┐┌─┐ ┬ ┬┌─┐┬─┐┌┬┐┌─┐┬─┐┌─┐
-                                      ├─┤├┤ ├─┤ │││─┼┐│ │├─┤├┬┘ │ ├┤ ├┬┘└─┐
-                                      ┴ ┴└─┘┴ ┴─┴┘└─┘└└─┘┴ ┴┴└─ ┴ └─┘┴└─└─┘
+                                                ▄█   ▄█▄    ▄██████▄  ▀█████████▄  
+                                                ███ ▄███▀   ███    ███   ███    ███ 
+                                                ███▐██▀     ███    █▀    ███    ███ 
+                                              ▄█████▀     ▄███         ▄███▄▄▄██▀  
+                                              ▀▀█████▄    ▀▀███ ████▄  ▀▀███▀▀▀██▄  
+                                                ███▐██▄     ███    ███   ███    ██▄ 
+                                                ███ ▀███▄   ███    ███   ███    ███ 
+                                                ███   ▀█▀   ████████▀  ▄█████████▀  
+                                                ▀                                   ".colorize(:blue) +
+                                                
+                                              " 
+                                                
+                                                ┬ ┬┌─┐┌─┐┌┬┐┌─┐ ┬ ┬┌─┐┬─┐┌┬┐┌─┐┬─┐┌─┐
+                                                ├─┤├┤ ├─┤ │││─┼┐│ │├─┤├┬┘ │ ├┤ ├┬┘└─┐
+                                                ┴ ┴└─┘┴ ┴─┴┘└─┘└└─┘┴ ┴┴└─ ┴ └─┘┴└─└─┘
+
           ")
-            anim('    Донжт интерфере ин оур интернал аффаирс. Лет ус странгле оур цитиизенс ин пеацер.
-          ("Don\'t interfere in our internal affairs. We are playing Counter Strike this week.")')    
+            anim('                            Донжт интерфере ин оур интернал аффаирс. Лет ус странгле оур цитиизенс ин пеацер.
+                          ("Don\'t interfere in our internal affairs. We are playing Counter Strike this week.")'.colorize(:red))    
           puts "\n"
-          puts "      The KGB has declined any involvement in the assistance of dealing with this virus"
+          puts "                           The KGB has declined any involvement in the assistance of dealing with this virus"
           puts "\n"
           egg1 = [@easter_egg[0]]
           result_egg1 = @prompt.collect do
@@ -187,14 +239,17 @@ class Vladmir_Putin
           #  turn into a ternary
           
                 if egg_result = @easter_egg[0]
-                  puts st_Petersburg
+                  puts require_relative "plane_animation"
                   else puts "goodbye"
                 end
+           
         end
+       
+        # ------Plane-Animation-------------------------
     
       #---------QUESTION TWO--------------------------------------------------- 
         def st_Petersburg
-        
+        puts `clear`
           anim_two( "
                             ██████████████████████████████████████████████████████████████████████████▀█
                             █─▄▄▄▄█─▄─▄─███▄─▄▄─█▄─▄▄─█─▄─▄─█▄─▄▄─█▄─▄▄▀█─▄▄▄▄█▄─▄─▀█▄─██─▄█▄─▄▄▀█─▄▄▄▄█
@@ -292,7 +347,7 @@ class Vladmir_Putin
 
         def gulag
           puts `clear`
-          anim_two( '
+          puts '
                 ███        ▄█    █▄       ▄████████         ▄██████▄  ███    █▄   ▄█          ▄████████    ▄██████▄  
             ▀█████████▄   ███    ███     ███    ███        ███    ███ ███    ███ ███         ███    ███   ███    ███ 
               ▀███▀▀██   ███    ███     ███    █▀         ███    █▀  ███    ███ ███         ███    ███   ███    █▀  
@@ -302,11 +357,44 @@ class Vladmir_Putin
                 ███       ███    ███     ███    ███        ███    ███ ███    ███ ███▌    ▄   ███    ███   ███    ███ 
               ▄████▀     ███    █▀      ██████████        ████████▀  ████████▀  █████▄▄██   ███    █▀    ████████▀  
                                                                                 ▀                                   
-            ')
-          puts 
-          'Welcome to the Gulag, a fight for survival where winning your Gunfight will grant you a second chance…
-          while losing your Gunfight results in possible elimination.'
+            '
+          puts "Welcome to the Gulag, a fight for survival where winning your Gunfight will grant you a second chance…
+          while losing your Gunfight results in possible elimination."
+      
+      puts "
+      
+      
+      
+                      +--^----------,--------,-----,--------^-, 
+                      | |||||||||   `--------'     |          O 
+                      `+---------------------------^----------| 
+                        `\_,---------,---------,--------------'
+                          / XXXXXX /'|       /'
+                         / XXXXXX /  `\    /'
+                        / XXXXXX /`-------'
+                       / XXXXXX /
+                      / XXXXXX /
+                      (________(                
+                      `------'              
+      
+      "
+      egg1 = [@easter_egg[2]]
+      result_egg1 = @prompt.collect do
+        key(:answer).select("Press Enter:", egg1)
         end
+
+      puts `clear`
+
+      egg_result = result_egg1.values.join
+
+      #  turn into a ternary
+      
+            if egg_result = @easter_egg[0]
+              require_relative "explosion.rb"
+            end
+       puts final_straw
+
+  end
 
         def final_straw
           puts `clear`
@@ -348,10 +436,12 @@ class Vladmir_Putin
 
           # ---Putin Execution Logic -----
           if @q1 == "Consult the KGB"
-              puts kgb 
+              puts kgb
           else
-            puts st_Petersburg
+            require_relative("plane_animation")
+            puts `clear`
           end
+          puts st_Petersburg
         # --Q2----------
           if @q2 == 'Crack a fresh bottle of grey goose and sing ra ra rasputin'
             puts ra_ra
@@ -421,12 +511,50 @@ def start_up
 
   characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
   puts "\n"
-  puts "A pandemic has broken out!!"
+    puts "
+
+                                                                                                          ╔═╗
+                                                                                                          ╠═╣
+                                                                                                          ╩ ╩
+
+    "
+    puts"
+
+                                                                        ██▓███   ▄▄▄       ███▄    █ ▓█████▄ ▓█████  ███▄ ▄███▓ ██▓ ▄████▄  
+                                                                        ▓██░  ██▒▒████▄     ██ ▀█   █ ▒██▀ ██▌▓█   ▀ ▓██▒▀█▀ ██▒▓██▒▒██▀ ▀█  
+                                                                        ▓██░ ██▓▒▒██  ▀█▄  ▓██  ▀█ ██▒░██   █▌▒███   ▓██    ▓██░▒██▒▒▓█    ▄ 
+                                                                        ▒██▄█▓▒ ▒░██▄▄▄▄██ ▓██▒  ▐▌██▒░▓█▄   ▌▒▓█  ▄ ▒██    ▒██ ░██░▒▓▓▄ ▄██▒
+                                                                        ▒██▒ ░  ░ ▓█   ▓██▒▒██░   ▓██░░▒████▓ ░▒████▒▒██▒   ░██▒░██░▒ ▓███▀ ░
+                                                                        ▒▓▒░ ░  ░ ▒▒   ▓▒█░░ ▒░   ▒ ▒  ▒▒▓  ▒ ░░ ▒░ ░░ ▒░   ░  ░░▓  ░ ░▒ ▒  ░
+                                                                        ░▒ ░       ▒   ▒▒ ░░ ░░   ░ ▒░ ░ ▒  ▒  ░ ░  ░░  ░      ░ ▒ ░  ░  ▒   
+                                                                        ░░         ░   ▒      ░   ░ ░  ░ ░  ░    ░   ░      ░    ▒ ░░        
+                                                                                      ░  ░         ░    ░       ░  ░       ░    ░  ░ ░      
+                                                                                                      ░                            ░        
+
+    ".colorize(:magenta) 
+
+  puts"
+                                                                                      ╦ ╦┌─┐┌─┐  ╔╗ ┬─┐┌─┐┬┌─┌─┐┌┐┌  ╔═╗┬ ┬┌┬┐
+                                                                                      ╠═╣├─┤└─┐  ╠╩╗├┬┘│ │├┴┐├┤ │││  ║ ║│ │ │ 
+                                                                                      ╩ ╩┴ ┴└─┘  ╚═╝┴└─└─┘┴ ┴└─┘┘└┘  ╚═╝└─┘ ┴ 
+  "
   puts "\n"
-  puts "Select your character below:"
-  puts "1 For #{characters[0]}"
-  puts "2 for #{characters[1]}"
-  puts "3 for #{characters[2]}"
+  puts "                                                                                                                                                              
+                                                                                            (SELECT YOUR CHARACTER  BELOW)
+  ".colorize(:light_blue)
+  puts "                                                                                       
+                                                                                                 FOR DONALD TRUMP
+                                                                                                    (PRESS 1)
+  ".colorize(:yellow)
+  puts " 
+                                                                                                FOR VLADMIR PUTIN 
+                                                                                                    (PRESS 2)
+  ".colorize(:yellow)
+  puts "
+                                                                                                FOR BORIS JOHNSON 
+                                                                                                    (PRESS 3)
+  ".colorize(:yellow)
+
 
 
   while true
@@ -446,7 +574,7 @@ def start_up
     end 
   end
 
-  puts @divider
+  
   puts selection.message
   game_one = Game.new
   puts game_one.engine
@@ -455,7 +583,7 @@ def start_up
 
 end
 
-puts start_up
+start_up
 
 
 
