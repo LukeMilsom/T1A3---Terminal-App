@@ -293,7 +293,7 @@ array = [
 
 
 
-        def moving_anim(string)
+        def plane_moving_anim(string)
             string.each do |n|
             print `clear`,"
         
@@ -322,5 +322,8 @@ array = [
             sleep(time)
         end
 
-moving_anim(array)
+plane = plane_moving_anim(array)
 puts `clear`
+
+puts plane
+

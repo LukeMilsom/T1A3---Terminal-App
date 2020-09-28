@@ -30,8 +30,8 @@ class Vladmir_Putin
                                                                                                                                                 
                                                                             "
 
-                                                                                                    ████████╗ ██████╗                                                 
-                                                                                                    ══██╔══╝██╔═══██╗                                                
+                                                                                                      ████████╗ ██████╗                                                 
+                                                                                                       ═██╔══╝██╔═══██╗                                                
                                                                                                         ██║   ██║   ██║                                                
                                                                                                         ██║   ██║   ██║                                                
                                                                                                         ██║   ╚██████╔╝                                                
@@ -154,7 +154,7 @@ class Vladmir_Putin
             #  turn into a ternary
             
                     if egg_result = @easter_egg[0]
-                    puts require_relative ("plane_animation.rb")
+                    puts require_relative ("../animations/plane_animation.rb")
                     else puts "goodbye"
                     end
             
@@ -278,10 +278,10 @@ class Vladmir_Putin
                                                                                 While losing your Gunfight results in possible elimination."
         
         puts "    
-                                                                                                +--^----------,--------,-----,--------^-, 
-                                                                                                | |||||||||   `--------'     |          O 
-                                                                                                `+---------------------------^----------| 
-                                                                                                `\_,---------,---------,--------------'
+                                                                                             +--^----------,--------,-----,--------^-, 
+                                                                                             | |||||||||   `--------'     |          O 
+                                                                                             `+---------------------------^----------| 
+                                                                                            `\_,---------,---------,--------------'
                                                                                                     / XXXXXX /'|       /'
                                                                                                 / XXXXXX /  `\    /'
                                                                                                 / XXXXXX /`-------'
@@ -303,7 +303,7 @@ class Vladmir_Putin
         #  turn into a ternary
         
                 if egg_result = @easter_egg[2]
-                require_relative "explosion.rb"
+                require_relative ("../animations/explosion.rb")
                 end
         puts final_straw
 
@@ -357,7 +357,7 @@ class Vladmir_Putin
             if @q1 == "Consult the KGB"
                 puts kgb
             else
-                require_relative("plane_animation")
+                puts require_relative ("../animations/plane_animation.rb")
                 puts `clear`
             end
             puts st_Petersburg
@@ -375,7 +375,7 @@ class Vladmir_Putin
             end
         #---REPLAY-----
             if @wanna_play_again == 'Yes'
-            puts start_up
+            puts require_relative("../Are_You_Smarter_Than_A_World_Leader.rb")
             else 
             puts 'henlo'
             end
