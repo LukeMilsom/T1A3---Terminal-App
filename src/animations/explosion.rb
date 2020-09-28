@@ -78,42 +78,21 @@
 
   ",
 
-
-
-
  ] 
-  
-  
-  
   
   def moving_anim(string)
         string.each do |n|
-        print `clear`, n   
-        slt =rand(0.03..0.09)
-        sleep(slt)
-    end
-    print "\n"
-    end
+            print `clear`, n   
+            slt =rand(0.03..0.09)
+            sleep(slt)
+          end
+      print "\n"
+  end
 
     def sltime
         time = rand(0.5..1.5)
         sleep(time)
     end
-moving_anim(explode)
-puts `clear`
 
-
-
-# def anim_two(string)
-#     string.each_char do |n|
-#     print n.center(200) * 15
-#     slt =rand(0..0.001)
-#     sleep(slt)
-#   end
-#   print "\n"
-#   end
-
-#   def sltime_two
-#       time = rand(0.00..0.01)
-#       sleep(time)
-#   end
+    moving_anim(explode)
+    puts `clear`

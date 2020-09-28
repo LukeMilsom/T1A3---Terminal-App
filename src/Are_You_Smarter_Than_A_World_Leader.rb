@@ -12,14 +12,11 @@ require_relative('characters/boris_johnson.rb')
 
 class Game
   attr_accessor :intro
-    def initialize
-    
-    @score = []
-    # @divider = "################################################################################################################"
+    def initialize    
     @countries = ["Australia", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
-    @questions = [""]
     @country = @countries.sample
     end
+    
     def dialogue 
       puts `clear`
       puts "
@@ -46,9 +43,9 @@ class Game
 
                                                                 
       "    
-    box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
-    it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!")
-      end
+        box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
+        it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!")
+    end
     def continue 
         while true
         press_enter = gets.chomp
@@ -93,12 +90,14 @@ end
 
 def start_up
 
-    donald = Donald_Trump.new
-    vlad = Vladmir_Putin.new
-    boris = Boris_Johnson.new
+      donald = Donald_Trump.new
+      vlad = Vladmir_Putin.new
+      boris = Boris_Johnson.new
 
-  characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
+      characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
+
   puts "\n"
+  
     puts "
 
                                                                                                           ╔═╗
@@ -144,77 +143,33 @@ def start_up
   ".colorize(:yellow)
 
 
-
+def character_select
   while true
-      selection = gets.to_i
-    if selection == 1
-        selection = donald
-        break
-    elsif selection == 2
-        selection = vlad
-        break
-    elsif
-        selection == 3
-        selection = boris
-        break
-    else 
-      puts "Incorrect input, please enter a number from 1-3"
-    end 
-  end
+          selection = gets.to_i
+        if selection == 1
+            selection = donald
+            break
+        elsif selection == 2
+              selection = vlad
+            break
+        elsif selection == 3
+              selection = boris
+            break
+        else 
+          puts "Incorrect input, please enter a number from 1-3"
+        end 
+    end
+end   
+
 
   
-  # puts selection.message
-  game_one = Game.new
-  puts game_one.engine
-  puts `clear`
-  puts selection.run_game
+ 
+    game_one = Game.new
+    puts game_one.engine
+    puts `clear`
+    puts selection.run_game
 
 end
 
 start_up
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
