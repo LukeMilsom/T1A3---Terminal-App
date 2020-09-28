@@ -14,8 +14,8 @@ class Game
     def initialize
     
     @score = []
-    @divider = "################################################################################################################"
-    @countries = ["China", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
+    # @divider = "################################################################################################################"
+    @countries = ["Australia", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
     @questions = [""]
     @country = @countries.sample
     end
@@ -95,7 +95,7 @@ class Vladmir_Putin
         def initialize
           @score = []
           @questions = ["Evening comrade, the virus is spreading at a rate of knotts, we need to take imediate action!", 
-        "What would you like to do?", ""]
+          "What would you like to do?", ""]
           @play_again = ['Play again?', 'Yes', 'No']
           @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
           @balanced_answers = ['Consult the KGB', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
@@ -258,7 +258,8 @@ class Vladmir_Putin
         puts `clear`
           anim_two( "
                                                                             ██████████████████████████████████████████████████████████████████████████▀█
-                                                                            █─▄▄▄▄█─▄─▄─███▄─▄▄─█▄─▄▄─█─▄─▄─█▄─▄▄─█▄─▄▄▀█─▄▄▄▄█▄─▄─▀█▄─██─▄█▄─▄▄▀█─▄▄▄▄█ " +
+                                                                            █─▄▄▄▄█─▄─▄─███▄─▄▄─█▄─▄▄─█─▄─▄─█▄─▄▄─█▄─▄▄▀█─▄▄▄▄█▄─▄─▀█▄─██─▄█▄─▄▄▀█─▄▄▄▄█                                     
+                                                                            " +
                                                                           " █▄▄▄▄─███─██████─▄▄▄██─▄█▀███─████─▄█▀██─▄─▄█▄▄▄▄─██─▄─▀██─██─███─▄─▄█─██▄─█
                                                                             ▀▄▄▄▄▄▀▀▄▄▄▀▀▀▀▄▄▄▀▀▀▄▄▄▄▄▀▀▄▄▄▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▄▀▀▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀
                                                                             
@@ -392,7 +393,7 @@ class Vladmir_Putin
 
       #  turn into a ternary
       
-            if egg_result = @easter_egg[0]
+            if egg_result = @easter_egg[2]
               require_relative "explosion.rb"
             end
        puts final_straw
@@ -464,12 +465,12 @@ class Vladmir_Putin
         puts final_straw
         end
       #---REPLAY-----
-      if @wanna_play_again == 'Yes'
-        puts start_up
-      else 
-      puts 'henlo'
-      end
-      
+        if @wanna_play_again == 'Yes'
+          puts start_up
+        else 
+        puts 'henlo'
+        end
+        
         
 
      
@@ -584,7 +585,7 @@ def start_up
   end
 
   
-  puts selection.message
+  # puts selection.message
   game_one = Game.new
   puts game_one.engine
   puts `clear`
