@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+require 'tty-spinner'
+require 'pastel'
+require "tty-prompt"
+require 'colorize'
+require 'colorized_string'
+require "tty-box"
+require 'ruby2d'
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"

@@ -311,10 +311,10 @@ array = [
            
            
             " , n 
-            slt =rand(0.03..0.09)
-            sleep(slt)
-        end
-        print "\n"
+                slt =rand(0.03..0.09)
+                sleep(slt)
+                end
+                print "\n"
         end
     
         def sltime

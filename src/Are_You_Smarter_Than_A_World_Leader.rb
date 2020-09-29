@@ -1,17 +1,20 @@
-# require 'tty-progressbar'
+
 require 'tty-spinner'
 require 'pastel'
 require "tty-prompt"
 require 'colorize'
 require 'colorized_string'
 require "tty-box"
-require_relative('characters/vladmir_putin.rb')
+require 'ruby2d'
+require_relative('characters/vladmir_putin')
 require_relative('characters/donald_trump.rb')
-require_relative('characters/boris_johnson.rb')
+
 
 
 class Game
   attr_accessor :intro
+  attr_accessor :run_game
+  
     def initialize    
     @countries = ["Australia", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
     @country = @countries.sample
@@ -33,14 +36,6 @@ class Game
                                                                 ╚═╝   ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚══════╝    ╚══════╝ ╚═════╝  ╚═╝ ╚════╝ 
             
                                                                 
-
-
-
-
-
-
-
-
                                                                 
       "    
         box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
@@ -61,14 +56,7 @@ class Game
         puts dialogue
         puts "
         
-
         
-
-
-
-
-
-
         
                                                                                                 ╔═╗╦═╗╔═╗╔═╗╔═╗  ╔═╗╔╗╔╔╦╗╔═╗╦═╗
                                                                                                 ╠═╝╠╦╝║╣ ╚═╗╚═╗  ║╣ ║║║ ║ ║╣ ╠╦╝ o
@@ -87,26 +75,19 @@ end
 
 #////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+duck_sound = Music.new('SOUND/Duck_Tales.mp3') 
 def start_up
 
-      donald = Donald_Trump.new
-      vlad = Vladmir_Putin.new
-      boris = Boris_Johnson.new
-
-      characters = ["Donald Trump", "Vladmir Putin", "Boris Johnson"]
+    
 
   puts "\n"
   
     puts "
-
                                                                                                           ╔═╗
                                                                                                           ╠═╣
                                                                                                           ╩ ╩
-
     "
     puts"
-
                                                                         ██▓███   ▄▄▄       ███▄    █ ▓█████▄ ▓█████  ███▄ ▄███▓ ██▓ ▄████▄  
                                                                         ▓██░  ██▒▒████▄     ██ ▀█   █ ▒██▀ ██▌▓█   ▀ ▓██▒▀█▀ ██▒▓██▒▒██▀ ▀█  
                                                                         ▓██░ ██▓▒▒██  ▀█▄  ▓██  ▀█ ██▒░██   █▌▒███   ▓██    ▓██░▒██▒▒▓█    ▄ 
@@ -117,7 +98,6 @@ def start_up
                                                                         ░░         ░   ▒      ░   ░ ░  ░ ░  ░    ░   ░      ░    ▒ ░░        
                                                                                       ░  ░         ░    ░       ░  ░       ░    ░  ░ ░      
                                                                                                       ░                            ░        
-
     ".colorize(:magenta) 
 
   puts"
@@ -137,29 +117,22 @@ def start_up
                                                                                                 FOR VLADMIR PUTIN 
                                                                                                     (PRESS 2)
   ".colorize(:yellow)
-  puts "
-                                                                                                FOR BORIS JOHNSON 
-                                                                                                    (PRESS 3)
-  ".colorize(:yellow)
 
 
-def character_select
+
   while true
           selection = gets.to_i
         if selection == 1
-            selection = donald
+            selection = Donald_Trump.new
             break
         elsif selection == 2
-              selection = vlad
-            break
-        elsif selection == 3
-              selection = boris
+            selection = Vladmir_Putin.new
             break
         else 
           puts "Incorrect input, please enter a number from 1-3"
         end 
     end
-end   
+   
 
 
   
@@ -170,6 +143,5 @@ end
     puts selection.run_game
 
 end
-
+duck_sound.play
 start_up
-
