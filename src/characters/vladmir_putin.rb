@@ -298,7 +298,7 @@ class Vladmir_Putin
             puts "      Welcome to the Gulag, a fight for survival where winning your Gunfight will grant you a second chance…
                                        While losing your Gunfight results in possible elimination."
         
-        puts "    
+        puts "                                     YOUR FATE IS IN THE HANDS OF THE RUBY RAND OBJECT
                                                              +--^----------,--------,-----,--------^-, 
                                                              | |||||||||   `--------'     |          O 
                                                              `+---------------------------^----------| 

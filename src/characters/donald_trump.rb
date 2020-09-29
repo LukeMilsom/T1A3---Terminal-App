@@ -3,13 +3,15 @@ class Donald_Trump
   
 
   def initialize
+    @america_sound = Music.new('SOUND/America.mp3')
+    @duck_sound = Music.new('SOUND/Duck_Tales.mp3') 
     @score = []
-    @questions = ["Evening comrade, the virus is spreading at a rate of knotts, we need to take imediate action!", 
+    @questions = ["Mr President, A foreign virus has hit our shores, we must act immediately", 
     "What would you like to do?", ""]
     @play_again = ['Play again?', 'Yes', 'No']
-    @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
-    @balanced_answers = ['Consult the KGB', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
-    @financial_answers = ['Leave The Borders Open', 'Play down the situation to keep a healthy economy', 'listen to the doctors advice']
+    @ethical_answers = ['Blame Hilary', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
+    @balanced_answers = ['Build A  Wall', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
+    @financial_answers = ['Lockdown', 'Play down the situation to keep a healthy economy', 'listen to the doctors advice']
     @easter_egg = ['Travel to St Petersburg to address the citizens', 'Finish your vodka and ignore the gopniks', 'Fire the gun']
     @fail = ['civil war', 'starvation', 'bankruptcy', 'collapse']
     @failure = @fail.sample
@@ -21,6 +23,8 @@ class Donald_Trump
       # ------BEGIN GAME SIMULATION---------------------------
       def run_game
           @prompt = TTY::Prompt.new
+          @duck_sound.stop
+          @america_sound.play
           print "
                                                                            
                                                                                              ████████╗██╗  ██╗██╗███████╗
