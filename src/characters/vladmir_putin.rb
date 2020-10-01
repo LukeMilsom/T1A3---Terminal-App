@@ -1,4 +1,5 @@
-
+require_relative ("../animations/explosion.rb")
+require_relative ("../animations/plane_animation.rb")
         def message_one
             puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
         end
@@ -77,7 +78,7 @@ class Vladmir_Putin
             end
             spinner
         #--------SLOW TYPWRITER ANIMATION-------------------
-        char = STDIN.getch  
+      
         
         def anim(string)
             
@@ -86,13 +87,10 @@ class Vladmir_Putin
                                  
                 print n  
                 
-                break if n == char 
+              
                 slt =rand(0.02..0.08)
-                sleep(slt)
-                
-            
+                sleep(slt)       
             end
-            char = STDIN.getch
             print "\n"
             end
 
@@ -155,9 +153,9 @@ class Vladmir_Putin
 
             ")
                 puts'                                        Донжт интерфере ин оур интернал аффаирс. Лет ус странгле оур цитиизенс ин пеацер.
-                                         ("Don\'t interfere in our internal affairs. We are playing Counter Strike this week.")'.colorize(:red)    
+                                              ("Don\'t interfere in our internal affairs. We are playing Counter Strike this week.")'.colorize(:red)    
             puts "\n"
-            anim( "                              The KGB has declined any involvement in the assistance of dealing with this virus ")
+            anim_two( "                              The KGB has declined any involvement in the assistance of dealing with this virus ")
             puts" 
             
             "
@@ -174,7 +172,7 @@ class Vladmir_Putin
             #  turn into a ternary
             
                     if egg_result = @easter_egg[0]
-                    puts require_relative ("../animations/plane_animation.rb")
+                        plane_moving_anim()
                     else puts "goodbye"
                     end
             
@@ -214,11 +212,8 @@ class Vladmir_Putin
                                 spinner
 
             def question_engine_unique(q1, a1, a2, a3)
-                anim("Thank god you're here sir, did the flight from Moscow treat you well? \n 
-                The pressure is mounting, our citizens are beginning to feel unwell,\n
-                the public is growing weary that the virus is growing out of control \n
-                due to your decision to #{@q1.downcase}\n
-                you need to adress them:")
+                anim("Thank god you're here sir, did the flight from Moscow treat you well? \n") 
+                anim("The pressure is mounting, our citizens are beginning to feel unwell,\nthe public is growing weary that the virus is growing out of control due to your decision to #{@q1.downcase}\n")
                 puts q1
                 
                 q1 = [a1, a2, a3]
@@ -287,9 +282,9 @@ class Vladmir_Putin
                                                       ------------------------------------------------
 ')
                 spinner
-                anim('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
-                anim('Patient - "But I\'m not even sick!')
-                anim("you are what we say you are comrade!")
+                anim_two('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
+                anim_two('Patient - "But I\'m not even sick!')
+                anim_two("you are what we say you are comrade!")
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
 
@@ -337,13 +332,17 @@ class Vladmir_Putin
         #  turn into a ternary
         
                 if egg_result = @easter_egg[2]
-                require_relative ("../animations/explosion.rb")
+                    moving_anim()
                 end
-        puts final_straw
+                
+        
+            arr = [method(:final_straw_lose), method(:final_straw_win)]
 
+            didIwin = arr.sample
+             didIwin.call
         end
 
-            def final_straw
+        def final_straw_lose
             puts `clear`
             anim_two('
                                                 ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
@@ -357,7 +356,7 @@ class Vladmir_Putin
                                                 ▐░▌          ▐░▌       ▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ 
                                                 ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌
                                                 ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀                                                                 
-'.colorize(:red) )
+                    '.colorize(:red) )
             puts "                                          You have sincerely let your people down, your country is on the brink of #{@failure}
               
             
@@ -382,7 +381,54 @@ class Vladmir_Putin
             end
             @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
 
+        end
+
+
+        def final_straw_win
+            puts `clear`
+            anim_two('
+
+            ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄      
+            ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     
+            ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀      
+            ▐░▌          ▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌          ▐░▌          ▐░▌               
+            ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░▌          ▐░▌          ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄      
+            ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     
+             ▀▀▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌     
+                      ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌                    ▐░▌          ▐░▌     
+             ▄▄▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌     
+            ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     
+             ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀      
+                                                                                                            
+                                '.colorize(:green) )
+            puts "                                         
+              
+            
+            Congratulations, Comrade - you survived the gulag
+            
+            
+            ".colorize(:yellow)
+
+            def play(q1, a1, a2)
+                
+                puts q1
+                
+                q1 = [a1, a2]
+                `clear`
+                result_q1 = @prompt.collect do
+                key(:answer).select("", q1)
+                end
+
+                puts `clear`
+
+                answer = result_q1.values.join
             end
+            @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
+
+        end
+
+
+
 
             
 
@@ -410,7 +456,7 @@ class Vladmir_Putin
             if @wanna_play_again == 'Yes'
              start_up
             else 
-            puts 'henlo'
+            exit
             end
             
             
