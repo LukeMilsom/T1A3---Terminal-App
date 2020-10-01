@@ -41,7 +41,7 @@ class Game
         box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
         it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!")
     end
-    def continue 
+    def continue() 
         while true
         press_enter = gets.chomp
         if press_enter.empty?

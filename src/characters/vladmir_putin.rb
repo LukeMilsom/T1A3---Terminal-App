@@ -1,4 +1,10 @@
 
+        def message_one
+            puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
+        end
+        def message_two
+            puts "Are you ready?"
+        end
 
 class Vladmir_Putin
 
@@ -71,19 +77,26 @@ class Vladmir_Putin
             end
             spinner
         #--------SLOW TYPWRITER ANIMATION-------------------
-            def anim(string)
+        char = STDIN.getch  
+        
+        def anim(string)
+            
                 string.each_char do |n|
+                    
+                                 
                 print n  
+                
+                break if n == char 
                 slt =rand(0.02..0.08)
                 sleep(slt)
+                
+            
             end
+            char = STDIN.getch
             print "\n"
             end
 
-            def sltime
-                time = rand(0.5..1.5)
-                sleep(time)
-            end
+       
 
         # -------FAST TYPEWRITER ANIMATION-----------------
             def anim_two(string)
@@ -395,7 +408,7 @@ class Vladmir_Putin
             end
         #---REPLAY-----
             if @wanna_play_again == 'Yes'
-            puts start_up
+             start_up
             else 
             puts 'henlo'
             end
