@@ -3,7 +3,7 @@
 
 
 
-
+# ---RSPEC--Testing the Plane Animation
 
 
         def plane_moving_anim()
@@ -320,6 +320,8 @@
                 end
                 print "\n"
         end
+
+
     
         def sltime
             time = rand(0.5..1.5)

@@ -1,11 +1,25 @@
 require_relative ("../animations/explosion.rb")
 require_relative ("../animations/plane_animation.rb")
-        def message_one
-            puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
-        end
-        def message_two
-            puts "Are you ready?"
-        end
+
+# RSPEC TEST FOR MY STORY TELLING TYPWRITER ANIMATION
+def anim(string)
+            
+    string.each_char do |n|
+        
+                     
+    print n  
+    
+  
+    slt =rand(0.02..0.08)
+    sleep(slt)       
+    end
+    print "\n"
+end
+# -------------------------------------
+
+
+
+     
 
 class Vladmir_Putin
 
@@ -25,10 +39,6 @@ class Vladmir_Putin
       @fail = ['civil war', 'starvation', 'bankruptcy', 'collapse']
       @failure = @fail.sample
     end
-        # ------WELCOME MESSAGE--------------------------------
-        def message
-            puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
-        end
         # ------BEGIN GAME SIMULATION---------------------------
         def run_game
             @duck_sound.stop
@@ -80,19 +90,6 @@ class Vladmir_Putin
         #--------SLOW TYPWRITER ANIMATION-------------------
       
         
-        def anim(string)
-            
-                string.each_char do |n|
-                    
-                                 
-                print n  
-                
-              
-                slt =rand(0.02..0.08)
-                sleep(slt)       
-            end
-            print "\n"
-            end
 
        
 
@@ -246,7 +243,7 @@ class Vladmir_Putin
                                                                         　| |　　) /
                                                                         ノ )　　Lﾉ
                                                                         (_／                    
-"
+ "
 
                 anim('                        Шчатс готтен инто ыоу ВЛадмир..? ("What\'s gotten into you Vladmir...?")')
                     puts "\n"
@@ -280,7 +277,7 @@ class Vladmir_Putin
                                                               ^             |   |
 
                                                       ------------------------------------------------
-')
+ ')
                 spinner
                 anim_two('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
                 anim_two('Patient - "But I\'m not even sick!')
@@ -302,11 +299,11 @@ class Vladmir_Putin
                             ███       ███    ███     ███    ███        ███    ███ ███    ███ ███▌    ▄   ███    ███   ███    ███ 
                            ▄████▀     ███    █▀      ██████████        ████████▀  ████████▀  █████▄▄██   ███    █▀    ████████▀  
                                                                                              ▀                                   
-'.colorize(:red) 
+   '.colorize(:red) 
             puts "      Welcome to the Gulag, a fight for survival where winning your Gunfight will grant you a second chance…
                                        While losing your Gunfight results in possible elimination."
         
-        puts "                                     YOUR FATE IS IN THE HANDS OF THE RUBY RAND OBJECT
+        puts "                                     YOUR FATE IS IN THE HANDS OF THE RUBY SAMPLE METHOD
                                                              +--^----------,--------,-----,--------^-, 
                                                              | |||||||||   `--------'     |          O 
                                                              `+---------------------------^----------| 
@@ -319,7 +316,7 @@ class Vladmir_Putin
                                                                 (________(                
                                                                 `------'              
 
-"
+ "
         egg1 = [@easter_egg[2]]
         result_egg1 = @prompt.collect do
             key(:answer).select("Press Enter:", egg1)
@@ -327,9 +324,7 @@ class Vladmir_Putin
 
         puts `clear`
 
-        egg_result = result_egg1.values.join
-
-        #  turn into a ternary
+        egg_result = result_egg1.values.join       
         
                 if egg_result = @easter_egg[2]
                     moving_anim()
@@ -436,7 +431,7 @@ class Vladmir_Putin
             if @q1 == "Consult the KGB"
                 puts kgb
             else
-                puts require_relative ("../animations/plane_animation.rb")
+                puts plane_moving_anim()
                 puts `clear`
             end
             puts st_Petersburg
@@ -450,7 +445,7 @@ class Vladmir_Putin
             if @q3 == 'Send the patient to the Gulag'
             puts gulag
             else 
-            puts final_straw
+            puts final_straw_lose
             end
         #---REPLAY-----
             if @wanna_play_again == 'Yes'
