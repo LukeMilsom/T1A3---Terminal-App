@@ -1,8 +1,8 @@
-![Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Screen_Shot_2020-10-03_at_6.20.55_pm.png](Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Screen_Shot_2020-10-03_at_6.20.55_pm.png)
+<img src="docs/images/Screen Shot 2020-10-03 at 6.20.55 pm.png">
 
 # Software Development Plan 💻
 
-# Statement of purpose and scope.
+## Statement of purpose and scope.
 
 ### What will this application do?
 
@@ -20,7 +20,7 @@ The target audience for 'Are you smarter than a world leader?' is for 18 - 35 ye
 
  The target audience will use this application as a means of entertainment and fun.
 
-# Features
+## Features
 
 ### Character Selection
 
@@ -35,7 +35,7 @@ each character has a unique and dynamic adventure path with 3 answers to select 
 
 The final level has a randomly generated algorithm to decide whether the user will win or lose. The simulation is story specific but it always ends with a bang! The scene is set, you have some dialogue to guide you but no control on the outcome, it's essentially CLI Russian roulette.
 
-# User Experience and Interaction
+## User Experience and Interaction
 
 ### How the user will find out how to interact with each feature
 
@@ -50,17 +50,17 @@ From there the user will be met with TTY prompt selecting UI, easily navigate be
 
 The user is restricted to what they can and can't do, they have been given the necessary tools to navigate through the application without throwing errors. The tools used for achieving relevant restriction are conditional flow statements and conditional loops. For instance if the user tries to select a number that isn't 1 or 2 in the initial character selection, they will be asked to enter a valid selection.
 
-# Implementation plan and design
+## Implementation plan and design
 
 My implementation began with a pen and some paper drawing out and designing the logic, adding a human touch to the design process, stepping away from technology to begin engineering my ideas. Step 2 of my implementation plan was to begin the project management, I used Trello as my primary tool for project management I assigned myself cards with a schedule, a deadline, a to do list, a defects list, and more tools to aid in the production of this CLI application.
 
 my Trello board can be found here - [https://trello.com/b/j4C1WFzE/t1a3-terminal-application](https://trello.com/b/j4C1WFzE/t1a3-terminal-application)
 
-![Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Screen_Shot_2020-10-03_at_5.33.05_pm.png](Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Screen_Shot_2020-10-03_at_5.33.05_pm.png)
+<img src="docs/images/Screen Shot 2020-09-29 at 8.17.25 pm.png">
 
-# Flow  Chart
+## Flow Chart
 
-![Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Untitled_Diagram_(7)_(1).png](Untitled%207d1ecfbc5a7644c6bf943387a8df1ce6/Untitled_Diagram_(7)_(1).png)
+<img src="docs/images/FLOW_CHART.png">
 
 ### Instructions
 
