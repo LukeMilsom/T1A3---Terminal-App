@@ -1,4 +1,4 @@
-<img src = "Screen Shot 2020-10-03 at 6.20.55 pm.png">
+<img src = "images/Screen Shot 2020-10-03 at 6.20.55 pm.png">
 
 # Software Development Plan 💻
 
