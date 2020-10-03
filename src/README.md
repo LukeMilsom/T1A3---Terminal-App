@@ -94,7 +94,7 @@ Installation Instructions
 
 ## Run the application!
 
-- Navigate to the `src` directory of the repository then run the application using the following
+- Using the terminal navigate to the `src` directory of the repository then run the application using the following 
 
 (ensure volume is on).
 
