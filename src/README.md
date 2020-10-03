@@ -54,7 +54,7 @@ The user is restricted to what they can and can't do, they have been given the n
 
 My implementation began with a pen and some paper drawing out and designing the logic, adding a human touch to the design process, stepping away from technology to begin engineering my ideas. Step 2 of my implementation plan was to begin the project management, I used Trello as my primary tool for project management I assigned myself cards with a schedule, a deadline, a to do list, a defects list, and more tools to aid in the production of this CLI application.
 
-my Trello board can be found here - [https://trello.com/b/j4C1WFzE/t1a3-terminal-application](https://trello.com/b/j4C1WFzE/t1a3-terminal-application)
+my Trello board can be found <a href = "https://trello.com/b/j4C1WFzE/t1a3-terminal-application">here</a>
 
 <img src ="images/Screen Shot 2020-09-29 at 8.17.25 pm.png">
 
@@ -66,8 +66,8 @@ my Trello board can be found here - [https://trello.com/b/j4C1WFzE/t1a3-terminal
 
 Installation Instructions
 
-- Follow these instructions to install ruby on your  machine [https://www.ruby-lang.org/en/documentation/installation/](https://www.ruby-lang.org/en/documentation/installation/)
-- Clone or download the T1A3—Terminal app repository/files above or here -[https://github.com/LukeMilsom/T1A3---Terminal-App.git](https://github.com/LukeMilsom/T1A3---Terminal-App.git) if you can't find it
+- Follow these instructions to install ruby on your machine [https://www.ruby-lang.org/en/documentation/installation/](https://www.ruby-lang.org/en/documentation/installation/)
+- Clone or download the T1A3—Terminal app repository/files above or <a href ="https://github.com/LukeMilsom/T1A3---Terminal-App.git">here</a> if you can't find it
 - Open your machines  terminal and run the following command
 
 `$ install bundler`
