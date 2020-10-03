@@ -10,7 +10,7 @@ require_relative('characters/vladmir_putin')
 require_relative('characters/donald_trump.rb')
 
 
-
+# INITIALISE GAME------------
 class Game
   attr_accessor :intro
   attr_accessor :run_game
@@ -19,7 +19,7 @@ class Game
     @countries = ["Australia", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
     @country = @countries.sample
     end
-    
+    # ----DIALOGUE--------
     def dialogue 
       puts `clear`
       puts "
@@ -59,8 +59,8 @@ class Game
         
         
                                                                                                 ╔═╗╦═╗╔═╗╔═╗╔═╗  ╔═╗╔╗╔╔╦╗╔═╗╦═╗
-                                                                                                ╠═╝╠╦╝║╣ ╚═╗╚═╗  ║╣ ║║║ ║ ║╣ ╠╦╝ o
-                                                                                                ╩  ╩╚═╚═╝╚═╝╚═╝  ╚═╝╝╚╝ ╩ ╚═╝╩╚═ o
+                                                                                                ╠═╝╠╦╝║╣ ╚═╗╚═╗  ║╣ ║║║ ║ ║╣ ╠╦╝ 
+                                                                                                ╩  ╩╚═╚═╝╚═╝╚═╝  ╚═╝╝╚╝ ╩ ╚═╝╩╚═ 
                                                                                                         
                                         
         " 
@@ -73,9 +73,9 @@ class Game
 
 end
 
-#////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 duck_sound = Music.new('SOUND/Duck_Tales.mp3') 
+# -----START THE GAME -----------------
 def start_up
 
     
@@ -119,7 +119,7 @@ def start_up
   ".colorize(:yellow)
 
 
-
+# --------CHARACTER SELECTION---------------
   while true
           selection = gets.to_i
         if selection == 1
@@ -136,7 +136,7 @@ def start_up
 
 
   
- 
+#  -------EXECUTION LOGIC --------------
     game_one = Game.new
     puts game_one.engine
     puts `clear`

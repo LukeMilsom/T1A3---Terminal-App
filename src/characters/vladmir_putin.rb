@@ -121,10 +121,9 @@ class Vladmir_Putin
                 sleep(time)
             end
 
-        #------------------------------------------------------
+       
 
 
-        #--------------------------------------------
         # ----QUESTION ENGINE----------Q1!!!----------------
             def question_engine(q1, a1, a2, a3)
                 anim(q1)
@@ -179,7 +178,7 @@ class Vladmir_Putin
 
             egg_result = result_egg1.values.join
 
-            #  turn into a ternary
+          
             
                     if egg_result = @easter_egg[0]
                         plane_moving_anim()
@@ -188,7 +187,7 @@ class Vladmir_Putin
             
             end
         
-            # ------Plane-Animation-------------------------
+           
 
         #---------QUESTION TWO--------------------------------------------------- 
             def st_Petersburg
@@ -237,7 +236,7 @@ class Vladmir_Putin
                 answer = result_q1.values.join
             end
             @q2 = question_engine_unique(@questions[1], @ethical_answers[1], @balanced_answers[1], @financial_answers[1]) 
-
+        # ------IF Q2 = rara Rasputin------
             def ra_ra
             puts `clear`
             puts "
@@ -271,7 +270,7 @@ class Vladmir_Putin
                 
             end
             end
-
+        # -----Q3------------
             def hospital
             puts `clear`
                     anim_two('
@@ -297,7 +296,7 @@ class Vladmir_Putin
                 anim("you are what we say you are comrade!")
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
-
+        # ----IF Q3 = GULAG -----------------
             def gulag
                 @soviet_sound.stop
                 @gulag.play
@@ -349,7 +348,7 @@ class Vladmir_Putin
             didIwin = arr.sample
              didIwin.call
         end
-
+        # ------- IF YOU LOSE -------------
         def final_straw_lose
             puts `clear`
             anim_two('
@@ -391,7 +390,7 @@ class Vladmir_Putin
             @soviet_sound.stop 
         end
 
-
+    #   -------- IF YOU WIN--------
         def final_straw_win
             puts `clear`
             anim_two('

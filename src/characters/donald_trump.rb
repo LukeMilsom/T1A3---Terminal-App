@@ -134,7 +134,7 @@ class Donald_Trump
             end
             @q1 = question_engine(@questions[0], @ethical_answers[0], @balanced_answers[0], @financial_answers[0])
             
-            # -----IF Q1 = KGB-----------------------
+            # -----IF Q1 = FBI-----------------------
             def fbi 
                 
             anim_two("     
@@ -171,7 +171,7 @@ class Donald_Trump
 
             egg_result = result_egg1.values.join
 
-            #  turn into a ternary
+         
             
                     if egg_result = @easter_egg[0]
                         plane_moving_anim()
@@ -180,7 +180,6 @@ class Donald_Trump
             
             end
         
-            # ------Plane-Animation-------------------------
 
         #---------QUESTION TWO--------------------------------------------------- 
             def new_york
@@ -240,8 +239,9 @@ class Donald_Trump
 
             def springfield
             puts `clear`
+            # ------------If Q2 = search for some donuts------------
             puts "
-
+    
 
                         ╔═╗┌─┐┬─┐┬┌┐┌┌─┐┌─┐┬┌─┐┬  ┌┬┐
                         ╚═╗├─┘├┬┘│││││ ┬├┤ │├┤ │   ││
@@ -263,7 +263,7 @@ class Donald_Trump
                 
             end
             end
-
+        #    -----------------------LEVEL 3--------------
             def whitehouse
             puts `clear`
                     anim_two('
@@ -289,7 +289,7 @@ class Donald_Trump
                
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
-
+            # ---------FINAL BATTLE-----------------------
             def fourth_o_july
                
             puts `clear`
@@ -332,7 +332,7 @@ class Donald_Trump
 
         egg_result = result_egg1.values.join
 
-        #  turn into a ternary
+      
         
                 if egg_result = @easter_egg[2]
                     moving_anim()
@@ -344,7 +344,7 @@ class Donald_Trump
             didIwin = arr.sample
              didIwin.call
         end
-
+        #  -------------IF YOU LOSE----------------
         def final_straw_lose
             puts `clear`
             anim_two('
@@ -386,7 +386,7 @@ class Donald_Trump
             @america_sound.stop 
         end
 
-
+    #   -----------IF YOU WIN---------------
         def final_straw_win
             puts `clear`
             anim_two('
@@ -411,7 +411,7 @@ class Donald_Trump
             
             
             ".colorize(:yellow)
-
+        #    -----WOULD YOU LIKE TO PLAY AGAIN-----
             def play(q1, a1, a2)
                 
                 puts q1
