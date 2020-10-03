@@ -16,8 +16,10 @@ class Game
   attr_accessor :run_game
   
     def initialize    
+    
     @countries = ["Australia", "Bosnia & Herzegovina", "Jamaica" , "Canada", "Kyrgyztan", "Cuba", "Belarus", "The Philippines"]
     @country = @countries.sample
+    @country = ARGV[0] if ARGV[0]
     end
     # ----DIALOGUE--------
     def dialogue 
