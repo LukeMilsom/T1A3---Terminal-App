@@ -13,26 +13,23 @@ class Donald_Trump
     def initialize
       @gulag = Music.new('SOUND/Gulag.mp3')
       @duck_sound = Music.new('SOUND/Duck_Tales.mp3') 
-      @soviet_sound = Music.new('SOUND/Soviet_Union.mp3')
+      @america_sound = Music.new('SOUND/America.mp3')
       @score = []
-      @questions = ["Evening comrade, the virus is spreading at a rate of knotts, we need to take imediate action!", 
-      "What would you like to do?", ""]
+      @questions = ["A Certain 'nation' has reported this virus to be heading towards American soil, what should we do sir?", ""]
       @play_again = ['Play again?', 'Yes', 'No']
-      @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
-      @balanced_answers = ['Consult the KGB', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push the doctor out the window, and cover up any records of the  virus']
-      @financial_answers = ['Leave The Borders Open', 'Play down the situation to keep a healthy economy', 'listen to the doctors advice']
-      @easter_egg = ['Travel to St Petersburg to address the citizens', 'Finish your vodka and ignore the gopniks', 'Fire the gun']
+      @ethical_answers = ['Close the Borders', 'Search for some donuts', 'Battle it out against the 4th of July Zombies']
+      @balanced_answers = ['Visit the FBI', 'Adress the public in a serious manner, and let them know the danger of the virus', 'push Hilary out the window and try to cover up traces of the virus']
+      @financial_answers = ['Leave the borders open', 'Play down the situation to keep a healthy economy', 'Listen to Hilarys advice']
+      @easter_egg = ['Travel to NYC', 'Head to the whitehouse', 'Fire the gun']
       @fail = ['civil war', 'starvation', 'bankruptcy', 'collapse']
       @failure = @fail.sample
     end
-        # ------WELCOME MESSAGE--------------------------------
-        def message
-            puts "Congratulations Comrade, You have selected the Rootin' Tootin' Putin to battle this deadly virus, glory to the motherland"
-        end
+  
+  
         # ------BEGIN GAME SIMULATION---------------------------
         def run_game
             @duck_sound.stop
-            @soviet_sound.play
+            @america_sound.play
             @prompt = TTY::Prompt.new
             print "
     
@@ -123,7 +120,7 @@ class Donald_Trump
         #--------------------------------------------
         # ----QUESTION ENGINE----------Q1!!!----------------
             def question_engine(q1, a1, a2, a3)
-                anim_two(q1)
+                anim(q1)
                 
                 q1 = [a1, a2, a3]
                 `clear`
@@ -138,7 +135,7 @@ class Donald_Trump
             @q1 = question_engine(@questions[0], @ethical_answers[0], @balanced_answers[0], @financial_answers[0])
             
             # -----IF Q1 = KGB-----------------------
-            def kgb 
+            def fbi 
                 
             anim_two("     
                                                                             ███████╗██████╗ ██╗
@@ -158,9 +155,9 @@ class Donald_Trump
 
             ")
                 puts'                                       
-                                              ("Grab us some donuts and we may consider helping ya\'ll")'.colorize(:yellow)    
+                                                           ("Grab us some donuts and we may consider helping ya\'ll")'.colorize(:yellow)    
             puts "\n"
-            anim_two( "                              Head to New York to fetch donuts ")
+            anim_two( "                                                                 Head to New York to fetch donuts ")
             puts" 
             
             "
@@ -186,7 +183,7 @@ class Donald_Trump
             # ------Plane-Animation-------------------------
 
         #---------QUESTION TWO--------------------------------------------------- 
-            def st_Petersburg
+            def new_york
                 puts `clear`
                  anim_two( "
 
@@ -226,7 +223,7 @@ class Donald_Trump
 
             def question_engine_unique(q1, a1, a2, a3)
                 anim("Thank god you're here Mr President, did the flight from LAX treat you well? \n") 
-                anim("The virus is absolutely outta control sir and Biden told the public its because you chose to #{@q1.downcase}\n")
+                anim("The virus is absolutely outta control sir and Biden told the public it's because you chose to #{@q1.downcase}\n")
                 puts q1
                 
                 q1 = [a1, a2, a3]
@@ -241,7 +238,7 @@ class Donald_Trump
             end
             @q2 = question_engine_unique(@questions[1], @ethical_answers[1], @balanced_answers[1], @financial_answers[1]) 
 
-            def ra_ra
+            def springfield
             puts `clear`
             puts "
 
@@ -260,14 +257,14 @@ class Donald_Trump
                         key(:answer).select("Press Enter:", egg2)
                         end
                         if egg_result = @easter_egg[1]
-                        puts hospital
+                        puts whitehouse
                         end
 
                 
             end
             end
 
-            def hospital
+            def whitehouse
             puts `clear`
                     anim_two('
 
@@ -288,15 +285,13 @@ class Donald_Trump
                                                       ------------------------------------------------
  ')
                 spinner
-                anim_two('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
-                anim_two('Patient - "But I\'m not even sick!')
-                anim_two("you are what we say you are comrade!")
+                anim('"Hilary - You don\'t know what you\'re doing Donald, you need to lockdown!"')
+               
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
 
-            def gulag
-                @soviet_sound.stop
-                @gulag.play
+            def fourth_o_july
+               
             puts `clear`
             puts '
 
@@ -311,10 +306,10 @@ class Donald_Trump
                                                                                                                                             
                                                                                                                         
              '.colorize(:red) 
-            puts "              The virus has mutated into a flesh eating Zombie state,
-                                          time to survive"
+            puts "                                The virus has mutated into a flesh eating Zombie state,
+                                                                                          time to survive"
         
-        puts "              the fate is in Ruby sample methods hands                     
+        puts "                                           the fate is in Ruby sample methods hands                     
                                                              +--^----------,--------,-----,--------^-, 
                                                              | |||||||||   `--------'     |          O 
                                                              `+---------------------------^----------| 
@@ -365,7 +360,7 @@ class Donald_Trump
                                                 ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌
                                                 ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀                                                                 
                     '.colorize(:red) )
-            puts "                                          You have sincerely let your people down, your country is on the brink of #{@failure}
+            puts "                                          You let your people down TRUMP, your country is on the brink of #{@failure}
               
             
             
@@ -388,7 +383,7 @@ class Donald_Trump
                 answer = result_q1.values.join
             end
             @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
-
+            @america_sound.stop 
         end
 
 
@@ -412,7 +407,7 @@ class Donald_Trump
             puts "                                         
               
             
-            Congratulations, Comrade - you survived the gulag
+            Congratulations, Donald - you saved humanity
             
             
             ".colorize(:yellow)
@@ -432,7 +427,7 @@ class Donald_Trump
                 answer = result_q1.values.join
             end
             @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
-
+            @america_sound.stop 
         end
 
 
@@ -441,27 +436,28 @@ class Donald_Trump
             
 
             # ---Putin Execution Logic -----
-            if @q1 == "Consult the KGB"
-                puts kgb
+            if @q1 == "Visit the FBI"
+                puts fbi
             else
                 puts plane_moving_anim
                 puts `clear`
             end
-            puts st_Petersburg
+            puts new_york
             # --Q2----------
-            if @q2 == 'Crack a fresh bottle of grey goose and sing ra ra rasputin'
-                puts ra_ra
+            if @q2 == 'Search for some donuts'
+                puts springfield
             else 
-            puts hospital
+            puts whitehouse
             end
             #--Q3----------
-            if @q3 == 'Send the patient to the Gulag'
-            puts gulag
+            if @q3 == 'Battle it out against the 4th of July Zombies'
+            puts fourth_o_july
             else 
-            puts final_straw
+                final_straw_lose
             end
         #---REPLAY-----
             if @wanna_play_again == 'Yes'
+                
              start_up
             else 
             exit

@@ -29,7 +29,7 @@ class Vladmir_Putin
       @duck_sound = Music.new('SOUND/Duck_Tales.mp3') 
       @soviet_sound = Music.new('SOUND/Soviet_Union.mp3')
       @score = []
-      @questions = ["Evening comrade, the virus is spreading at a rate of knotts, we need to take imediate action!", 
+      @questions = ["Evening comrade, the virus is spreading at a rate of knots, we need to take immediate action!", 
       "What would you like to do?", ""]
       @play_again = ['Play again?', 'Yes', 'No']
       @ethical_answers = ['Close the Borders', 'Crack a fresh bottle of grey goose and sing ra ra rasputin', 'Send the patient to the Gulag']
@@ -89,7 +89,20 @@ class Vladmir_Putin
             spinner
         #--------SLOW TYPWRITER ANIMATION-------------------
       
-        
+        def self.anim(string)
+            
+            string.each_char do |n|
+                
+                             
+            print n  
+            
+          
+            slt =rand(0.02..0.08)
+            sleep(slt)       
+        end
+        print "\n"
+        end
+
 
        
 
@@ -114,7 +127,7 @@ class Vladmir_Putin
         #--------------------------------------------
         # ----QUESTION ENGINE----------Q1!!!----------------
             def question_engine(q1, a1, a2, a3)
-                anim_two(q1)
+                anim(q1)
                 
                 q1 = [a1, a2, a3]
                 `clear`
@@ -279,9 +292,9 @@ class Vladmir_Putin
                                                       ------------------------------------------------
  ')
                 spinner
-                anim_two('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
-                anim_two('Patient - "But I\'m not even sick!')
-                anim_two("you are what we say you are comrade!")
+                anim('Doctor - We have reported 10\'000 cases in the last 24hrs!! We must act accordingally')
+                anim('Patient - "But I\'m not even sick!')
+                anim("you are what we say you are comrade!")
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
 
@@ -375,7 +388,7 @@ class Vladmir_Putin
                 answer = result_q1.values.join
             end
             @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
-
+            @soviet_sound.stop 
         end
 
 
@@ -419,7 +432,7 @@ class Vladmir_Putin
                 answer = result_q1.values.join
             end
             @wanna_play_again = play(@play_again[0], @play_again[1], @play_again[2])
-
+            @soviet_sound.stop 
         end
 
 

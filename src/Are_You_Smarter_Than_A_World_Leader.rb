@@ -28,15 +28,15 @@ class Game
       
       
                                       
-                                                             ████████╗██╗  ██╗███████╗    ██╗   ██╗███████╗ █████╗ ██████╗     ██╗███████╗    ██████╗  ██████╗  ██╗ █████╗ 
-                                                              ╚═██╔══╝██║  ██║██╔════╝    ╚██╗ ██╔╝██╔════╝██╔══██╗██╔══██╗    ██║██╔════╝    ╚════██╗██╔═████╗███║██╔══██╗
-                                                                ██║   ███████║█████╗       ╚████╔╝ █████╗  ███████║██████╔╝    ██║███████╗     █████╔╝██║██╔██║╚██║╚██████║
-                                                                ██║   ██╔══██║██╔══╝        ╚██╔╝  ██╔══╝  ██╔══██║██╔══██╗    ██║╚════██║    ██╔═══╝ ████╔╝██║ ██║ ╚═══██║
-                                                                ██║   ██║  ██║███████╗       ██║   ███████╗██║  ██║██║  ██║    ██║███████║    ███████╗╚██████╔╝ ██║ █████╔╝
-                                                                ╚═╝   ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚══════╝    ╚══════╝ ╚═════╝  ╚═╝ ╚════╝ 
-            
-                                                                
-                                                                
+     ████████╗██╗  ██╗███████╗    ██╗   ██╗███████╗ █████╗ ██████╗     ██╗███████╗    ██████╗  ██████╗  ██╗ █████╗ 
+      ╚═██╔══╝██║  ██║██╔════╝    ╚██╗ ██╔╝██╔════╝██╔══██╗██╔══██╗    ██║██╔════╝    ╚════██╗██╔═████╗███║██╔══██╗
+        ██║   ███████║█████╗       ╚████╔╝ █████╗  ███████║██████╔╝    ██║███████╗     █████╔╝██║██╔██║╚██║╚██████║
+        ██║   ██╔══██║██╔══╝        ╚██╔╝  ██╔══╝  ██╔══██║██╔══██╗    ██║╚════██║    ██╔═══╝ ████╔╝██║ ██║ ╚═══██║
+        ██║   ██║  ██║███████╗       ██║   ███████╗██║  ██║██║  ██║    ██║███████║    ███████╗╚██████╔╝ ██║ █████╔╝
+        ╚═╝   ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝╚══════╝    ╚══════╝ ╚═════╝  ╚═╝ ╚════╝ 
+
+        
+        
       "    
         box = TTY::Box.warn("an unknown virus has broken out in #{@country}, and it is spreading across the globe, 
         it is your job as supreme leader to lead your people and your country through this.\nBe careful how you answer, as these actions could lead to adverse politcal and ethical results!!")
@@ -111,11 +111,11 @@ def start_up
   ".colorize(:light_blue)
   puts "                                                                                       
                                                                                                  FOR DONALD TRUMP
-                                                                                                    (PRESS 1)
+                                                                                              (PRESS 1, then enter)
   ".colorize(:yellow)
   puts " 
-                                                                                                FOR VLADMIR PUTIN 
-                                                                                                    (PRESS 2)
+                                                                                                 FOR VLADMIR PUTIN 
+                                                                                               (PRESS 2, then enter)
   ".colorize(:yellow)
 
 
@@ -129,7 +129,7 @@ def start_up
             selection = Vladmir_Putin.new
             break
         else 
-          puts "Incorrect input, please enter a number from 1-3"
+          puts "Incorrect input, please enter a number from 1-2 followed by enter key"
         end 
     end
    
