@@ -1,7 +1,7 @@
 require_relative ("../animations/explosion.rb")
 require_relative ("../animations/plane_animation.rb")
 
-# RSPEC TEST FOR MY STORY TELLING TYPWRITER ANIMATION
+# RSPEC TEST FOR MY STORY TELLING TYPWRITER ANIMATION-------
 def anim(string)
             
     string.each_char do |n|
@@ -78,7 +78,7 @@ class Vladmir_Putin
                                                                                 ".colorize(:red)          
                                                                                             
             
-            # ------LOADING SPINNER-----------------------
+        # ------LOADING SPINNER-----------------------
             def spinner
             spinner = TTY::Spinner.new("Loading :spinner ... ", format: :spin_2)
             20.times do
@@ -140,7 +140,7 @@ class Vladmir_Putin
             end
             @q1 = question_engine(@questions[0], @ethical_answers[0], @balanced_answers[0], @financial_answers[0])
             
-            # -----IF Q1 = KGB-----------------------
+        # -----IF Q1 = KGB-----------------------
             def kgb 
                 
             anim_two("     
@@ -390,7 +390,7 @@ class Vladmir_Putin
             @soviet_sound.stop 
         end
 
-    #   -------- IF YOU WIN--------
+        #-------- IF YOU WIN--------
         def final_straw_win
             puts `clear`
             anim_two('
@@ -439,7 +439,7 @@ class Vladmir_Putin
 
             
 
-            # ---Putin Execution Logic -----
+        # ---Putin Execution Logic -----
             if @q1 == "Consult the KGB"
                 puts kgb
             else
@@ -447,13 +447,13 @@ class Vladmir_Putin
                 puts `clear`
             end
             puts st_Petersburg
-            # --Q2----------
+        # --Q2----------
             if @q2 == 'Crack a fresh bottle of grey goose and sing ra ra rasputin'
                 puts ra_ra
             else 
             puts hospital
             end
-            #--Q3----------
+        #--Q3----------
             if @q3 == 'Send the patient to the Gulag'
             puts gulag
             else 

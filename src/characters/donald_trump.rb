@@ -71,7 +71,7 @@ class Donald_Trump
                                                                                 ".colorize(:blue)          
                                                                                             
             
-            # ------LOADING SPINNER-----------------------
+        # ------LOADING SPINNER-----------------------
             def spinner
             spinner = TTY::Spinner.new("Loading :spinner ... ", format: :spin_2)
             20.times do
@@ -114,10 +114,6 @@ class Donald_Trump
                 sleep(time)
             end
 
-        #------------------------------------------------------
-
-
-        #--------------------------------------------
         # ----QUESTION ENGINE----------Q1!!!----------------
             def question_engine(q1, a1, a2, a3)
                 anim(q1)
@@ -134,7 +130,7 @@ class Donald_Trump
             end
             @q1 = question_engine(@questions[0], @ethical_answers[0], @balanced_answers[0], @financial_answers[0])
             
-            # -----IF Q1 = FBI-----------------------
+        # -----IF Q1 = FBI-----------------------
             def fbi 
                 
             anim_two("     
@@ -239,7 +235,7 @@ class Donald_Trump
 
             def springfield
             puts `clear`
-            # ------------If Q2 = search for some donuts------------
+        # ------------If Q2 = search for some donuts------------
             puts "
     
 
@@ -263,7 +259,7 @@ class Donald_Trump
                 
             end
             end
-        #    -----------------------LEVEL 3--------------
+        #-----------------------LEVEL 3--------------
             def whitehouse
             puts `clear`
                     anim_two('
@@ -289,7 +285,7 @@ class Donald_Trump
                
                 @q3 = question_engine(@questions[1], @ethical_answers[2], @balanced_answers[2], @financial_answers[2])             
             end
-            # ---------FINAL BATTLE-----------------------
+        # ---------FINAL BATTLE-----------------------
             def fourth_o_july
                
             puts `clear`
@@ -344,7 +340,7 @@ class Donald_Trump
             didIwin = arr.sample
              didIwin.call
         end
-        #  -------------IF YOU LOSE----------------
+        # -------------IF YOU LOSE----------------
         def final_straw_lose
             puts `clear`
             anim_two('
@@ -386,7 +382,7 @@ class Donald_Trump
             @america_sound.stop 
         end
 
-    #   -----------IF YOU WIN---------------
+        # -----------IF YOU WIN---------------
         def final_straw_win
             puts `clear`
             anim_two('
@@ -411,7 +407,7 @@ class Donald_Trump
             
             
             ".colorize(:yellow)
-        #    -----WOULD YOU LIKE TO PLAY AGAIN-----
+        #-----WOULD YOU LIKE TO PLAY AGAIN-----
             def play(q1, a1, a2)
                 
                 puts q1
@@ -435,7 +431,7 @@ class Donald_Trump
 
             
 
-            # ---Putin Execution Logic -----
+        # ---Putin Execution Logic -----
             if @q1 == "Visit the FBI"
                 puts fbi
             else
@@ -443,13 +439,13 @@ class Donald_Trump
                 puts `clear`
             end
             puts new_york
-            # --Q2----------
+        # --Q2----------
             if @q2 == 'Search for some donuts'
                 puts springfield
             else 
             puts whitehouse
             end
-            #--Q3----------
+        #--Q3----------
             if @q3 == 'Battle it out against the 4th of July Zombies'
             puts fourth_o_july
             else 
