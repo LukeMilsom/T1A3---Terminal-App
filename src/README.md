@@ -56,11 +56,11 @@ My implementation began with a pen and some paper drawing out and designing the 
 
 my Trello board can be found here - [https://trello.com/b/j4C1WFzE/t1a3-terminal-application](https://trello.com/b/j4C1WFzE/t1a3-terminal-application)
 
-<img src ="src/images/Screen Shot 2020-09-29 at 8.17.25 pm.png">
+<img src ="images/Screen Shot 2020-09-29 at 8.17.25 pm.png">
 
 ## Flow Chart
 
-<img src ="src/images/FLOW_CHART.png">
+<img src ="images/FLOW_CHART.png">
 
 ### Instructions
 
