@@ -1,4 +1,4 @@
-![Kiku](images/Screen Shot 2020-10-03 at 6.20.55 pm.png)
+![Kiku](Screen Shot 2020-10-03 at 6.20.55 pm.png)
 
 # Software Development Plan 💻
 
