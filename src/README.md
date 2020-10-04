@@ -72,7 +72,7 @@ Installation Instructions
 
 `$ install bundler`
 
-- Once bundler has finished installing, enter the following code to install the Gems required to run the application.
+- Once bundler has finished installing, Navigate to the gem_file directory and enter the following code to install the Gems required to run the application.
 
 `$ bundle install`
 
