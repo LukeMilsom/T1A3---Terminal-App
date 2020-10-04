@@ -1,0 +1,15 @@
+current directory: /Users/lukemilsom/Desktop/LukeMilsom_T1A3/src/gem_file/.bundle/ruby/2.7.0/gems/ruby2d-0.9.4/ext/ruby2d
+/Users/lukemilsom/.rbenv/versions/2.7.1/bin/ruby -I /Users/lukemilsom/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20201004-13159-1o0y0ko.rb extconf.rb
+creating Makefile
+
+current directory: /Users/lukemilsom/Desktop/LukeMilsom_T1A3/src/gem_file/.bundle/ruby/2.7.0/gems/ruby2d-0.9.4/ext/ruby2d
+make "DESTDIR=" clean
+
+current directory: /Users/lukemilsom/Desktop/LukeMilsom_T1A3/src/gem_file/.bundle/ruby/2.7.0/gems/ruby2d-0.9.4/ext/ruby2d
+make "DESTDIR="
+compiling ruby2d.c
+linking shared-object ruby2d/ruby2d.bundle
+
+current directory: /Users/lukemilsom/Desktop/LukeMilsom_T1A3/src/gem_file/.bundle/ruby/2.7.0/gems/ruby2d-0.9.4/ext/ruby2d
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby2d.bundle ./.gem.20201004-13159-11725o/ruby2d

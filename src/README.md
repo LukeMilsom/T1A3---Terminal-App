@@ -76,7 +76,7 @@ Installation Instructions
 
 `$ bundle install`
 
-### Please ensure these Ruby gems are  installed before running the applicaion
+### Please ensure these Ruby gems are  installed before running the applicaion by running gem install #{gemname}
 
 `require 'tty-spinner`'
 
